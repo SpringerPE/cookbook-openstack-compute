@@ -75,7 +75,7 @@ end
 memcache_servers = memcached_servers.join ','
 
 # find the node attribute endpoint settings for the server holding a given role
-identity_endpoint = endpoint 'identity-api'
+identity_endpoint = endpoint 'identity-api-internal'
 xvpvnc_endpoint = endpoint 'compute-xvpvnc' || {}
 xvpvnc_bind = endpoint 'compute-xvpvnc-bind' || {}
 novnc_endpoint = endpoint 'compute-novnc' || {}
@@ -85,8 +85,8 @@ compute_api_bind = endpoint 'compute-api-bind' || {}
 compute_api_endpoint = endpoint 'compute-api' || {}
 ec2_api_bind = endpoint 'compute-ec2-api-bind' || {}
 ec2_public_endpoint = endpoint 'compute-ec2-api' || {}
-network_endpoint = endpoint 'network-api' || {}
-image_endpoint = endpoint 'image-api'
+network_endpoint = endpoint 'network-api-internal' || {}
+image_endpoint = endpoint 'image-api-internal'
 
 Chef::Log.debug("openstack-compute::nova-common:identity_endpoint|#{identity_endpoint.to_s}")
 Chef::Log.debug("openstack-compute::nova-common:xvpvnc_endpoint|#{xvpvnc_endpoint.to_s}")

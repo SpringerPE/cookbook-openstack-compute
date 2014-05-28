@@ -55,7 +55,7 @@ service 'nova-api-ec2' do
   action :enable
 end
 
-identity_endpoint = endpoint 'identity-api'
+identity_endpoint = endpoint 'identity-api-internal'
 identity_admin_endpoint = endpoint 'identity-admin'
 service_pass = get_password 'service', 'openstack-compute'
 
