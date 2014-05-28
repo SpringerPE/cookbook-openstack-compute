@@ -406,6 +406,8 @@ when 'debian'
   }
 end
 
+default['openstack']['compute']['platform']['service_provider'] = node['openstack']['common']['platform']['service_provider']
+
 # plugins
 default['openstack']['compute']['plugins'] = nil
 

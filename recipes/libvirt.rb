@@ -155,14 +155,14 @@ end
 service 'dbus' do
   service_name platform_options['dbus_service']
   supports status: true, restart: true
-
+  provider platform_options['service_provider']
   action [:enable, :start]
 end
 
 service 'libvirt-bin' do
   service_name platform_options['libvirt_service']
   supports status: true, restart: true
-
+  provider platform_options['service_provider']
   action [:enable, :start]
 end
 

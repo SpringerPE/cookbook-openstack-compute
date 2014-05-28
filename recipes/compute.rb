@@ -71,7 +71,7 @@ service 'nova-compute' do
   service_name platform_options['compute_compute_service']
   supports status: true, restart: true
   subscribes :restart, resources('template[/etc/nova/nova.conf]')
-
+  provider platform_options['service_provider']
   action [:enable, :start]
 end
 

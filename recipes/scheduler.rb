@@ -43,6 +43,6 @@ service 'nova-scheduler' do
   service_name platform_options['compute_scheduler_service']
   supports status: true, restart: true
   subscribes :restart, resources('template[/etc/nova/nova.conf]')
-
+  provider platform_options['service_provider']
   action [:enable, :start]
 end

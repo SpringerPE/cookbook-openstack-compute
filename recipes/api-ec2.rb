@@ -51,7 +51,7 @@ service 'nova-api-ec2' do
   service_name platform_options['api_ec2_service']
   supports status: true, restart: true
   subscribes :restart, resources('template[/etc/nova/nova.conf]')
-
+  provider platform_options['service_provider']
   action :enable
 end
 

@@ -41,6 +41,7 @@ if node['openstack']['compute']['network']['service_type'] == 'nova'
     service_name platform_options['compute_network_service']
     supports status: true, restart: true
     subscribes :restart, resources('template[/etc/nova/nova.conf]')
+    provider platform_options['service_provider']
     action :enable
   end
 

@@ -54,7 +54,7 @@ service 'nova-api-metadata' do
   service_name platform_options['compute_api_metadata_service']
   supports status: true, restart: true
   subscribes :restart, resources('template[/etc/nova/nova.conf]')
-
+  provider platform_options['service_provider']
   action :enable
 end
 
