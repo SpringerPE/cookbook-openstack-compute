@@ -12,32 +12,23 @@ default['openstack']['compute']['custom_template_banner'] = '
 # Do not edit, changes will be overwritten
 '
 
-# The name of the Chef role that knows about the message queue server
-# that Nova uses
-default['openstack']['compute']['rabbit_server_chef_role'] = 'os-ops-messaging'
-
 default['openstack']['compute']['verbose'] = 'False'
 default['openstack']['compute']['debug'] = 'False'
 
 default['openstack']['compute']['state_path'] = '/var/lib/nova'
-default['openstack']['compute']['instances_path'] =
-  "#{node['openstack']['compute']['state_path']}/instances"
+default['openstack']['compute']['instances_path'] = "#{node['openstack']['compute']['state_path']}/instances"
 default['openstack']['compute']['network_allocate_retries'] = 0
 default['openstack']['compute']['instance_name_template'] = 'instance-%08x'
 
 # The lock_path normally uses /var/lock/nova, but it's not allowed in openSUSE,
 # so setting lock_path to $state_path/lock like in Neutron.
-default['openstack']['compute']['lock_path'] =
-  "#{node['openstack']['compute']['state_path']}/lock"
+default['openstack']['compute']['lock_path'] = "#{node['openstack']['compute']['state_path']}/lock"
 
 # Workers
 # nova will default to number of cpus
 default['openstack']['compute']['ec2_workers'] = nil
 default['openstack']['compute']['osapi_compute_workers'] = nil
 default['openstack']['compute']['metadata_workers'] = nil
-
-# The name of the Chef role that sets up the Keystone Service API
-default['openstack']['compute']['identity_service_chef_role'] = 'os-identity'
 
 # Common rpc definitions
 default['openstack']['compute']['rpc_thread_pool_size'] = 64
