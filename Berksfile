@@ -1,6 +1,3 @@
-metadata
+source "http://berkshelf-api.tools.springer-sbm.com"
 
-cookbook "openstack-image", chef_api: :config
-cookbook "openstack-identity", chef_api: :config
-cookbook "openstack-common", chef_api: :config
-cookbook "openstack-network", chef_api: :config
+metadata
